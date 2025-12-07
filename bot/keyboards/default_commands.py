@@ -9,23 +9,29 @@ if TYPE_CHECKING:
 users_commands: dict[str, dict[str, str]] = {
     "en": {
         "help": "help",
+        "info": "Information about project",
         "contacts": "developer contact details",
         "menu": "main menu with earning schemes",
         "settings": "setting information about you",
+        "support": "Support contacts",
         "supports": "support contacts",
     },
     "uk": {
         "help": "help",
+        "info": "Інформація про проект",
         "contacts": "developer contact details",
         "menu": "main menu with earning schemes",
         "settings": "setting information about you",
+        "support": "Контакти служби підтримки",
         "supports": "support contacts",
     },
     "ru": {
         "help": "help",
+        "info": "Информация о проекте",
         "contacts": "developer contact details",
         "menu": "main menu with earning schemes",
         "settings": "setting information about you",
+        "support": "Контакты службы поддержки",
         "supports": "support contacts",
     },
 }

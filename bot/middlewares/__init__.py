@@ -1,8 +1,6 @@
 from aiogram import Dispatcher
 from aiogram.utils.callback_answer import CallbackAnswerMiddleware
 
-from .auth import AuthMiddleware
-from .database import DatabaseMiddleware
 from .i18n import ACLMiddleware
 from .logging import LoggingMiddleware
 from .throttling import ThrottlingMiddleware
@@ -14,9 +12,9 @@ def register_middlewares(dp: Dispatcher) -> None:
 
     dp.update.outer_middleware(LoggingMiddleware())
 
-    dp.update.outer_middleware(DatabaseMiddleware())
+    # dp.update.outer_middleware(DatabaseMiddleware())  # Temporarily disabled due to missing DB
 
-    dp.message.middleware(AuthMiddleware())
+    # dp.message.middleware(AuthMiddleware())  # Temporarily disabled due to missing DB
 
     ACLMiddleware(i18n=_i18n).setup(dp)
 

@@ -71,6 +71,48 @@
     uv run alembic upgrade head
     ```
 
+## 🚀 Как запустить проект
+
+### 1. Клонирование репозитория
+```bash
+git clone https://github.com/donBarbos/telegram-bot-template.git
+cd telegram-bot-template
+```
+
+### 2. Настройка окружения
+- Скопируйте файл `.env.example` в `.env`:
+  ```bash
+  cp .env.example .env
+  ```
+- Отредактируйте `.env`, указав свои значения (как минимум `BOT_TOKEN`).
+
+### 3. Установка зависимостей
+Рекомендуется использовать виртуальное окружение:
+```bash
+python -m venv venv
+source venv/bin/activate  # для Linux/Mac
+# или
+venv\Scripts\activate     # для Windows
+pip install -r requirements.txt
+```
+
+### 4. Запуск бота
+```bash
+python -m bot
+```
+
+### 5. Запуск админ-панели (опционально)
+```bash
+gunicorn -c admin/gunicorn_conf.py
+```
+
+### 6. Миграции базы данных (если используется PostgreSQL)
+```bash
+alembic upgrade head
+```
+
+> **Примечание:** Для работы бота требуется запущенная база данных (PostgreSQL) и Redis (для кэширования и FSM). Вы можете использовать Docker Compose для удобного развёртывания всех сервисов.
+
 ## 🌍 Environment variables
 
 to launch the bot you only need a token bot, database and redis settings, everything else can be left out

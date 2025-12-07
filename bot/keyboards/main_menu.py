@@ -1,0 +1,27 @@
+from aiogram.types import InlineKeyboardButton, InlineKeyboardMarkup
+from aiogram.utils.i18n import gettext as _
+from aiogram.utils.keyboard import InlineKeyboardBuilder
+
+
+def main_menu_keyboard() -> InlineKeyboardMarkup:
+    """Главное меню с 7 кнопками."""
+    buttons = [
+        [InlineKeyboardButton(text="📢 Исламский помощник", callback_data="islamic_assistant")],
+        [
+            InlineKeyboardButton(text="👤 МОЙ ПРОФИЛЬ / НАСТРОЙКИ", callback_data="profile_settings"),
+            InlineKeyboardButton(text="Знания", callback_data="knowledge"),
+        ],
+        [
+            InlineKeyboardButton(text="Обучение", callback_data="education"),
+            InlineKeyboardButton(text="Расписание намазов", callback_data="prayer_schedule"),
+        ],
+        [
+            InlineKeyboardButton(text="Халяль места", callback_data="halal_places"),
+            InlineKeyboardButton(text="Календарь событий", callback_data="events_calendar"),
+        ],
+    ]
+
+    keyboard = InlineKeyboardBuilder(markup=buttons)
+    keyboard.adjust(1, 2, 2, 2)  # первый ряд - 1 кнопка, остальные по 2
+
+    return keyboard.as_markup()
