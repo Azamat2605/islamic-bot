@@ -2,7 +2,7 @@ from aiogram import Router, types, F
 from aiogram.filters import Command
 from aiogram.utils.i18n import gettext as _
 
-from bot.keyboards.inline.menu import main_keyboard
+from bot.keyboards.reply import get_main_menu
 
 router = Router(name="menu")
 
@@ -10,7 +10,7 @@ router = Router(name="menu")
 @router.message(Command(commands=["menu", "main"]))
 async def menu_handler(message: types.Message) -> None:
     """Return main menu."""
-    await message.answer(_("title main keyboard"), reply_markup=main_keyboard())
+    await message.answer(_("Главное меню"), reply_markup=get_main_menu())
 
 
 @router.callback_query(F.data == "wallet")

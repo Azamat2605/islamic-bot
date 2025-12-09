@@ -12,6 +12,9 @@ from bot.handlers.metrics import MetricsView
 from bot.keyboards.default_commands import remove_default_commands, set_default_commands
 from bot.middlewares import register_middlewares
 from bot.middlewares.prometheus import prometheus_middleware_factory
+from database.engine import engine
+from database.base import Base
+from database.migration import migrate_telegram_id_to_bigint
 
 
 async def on_startup() -> None:
@@ -24,6 +27,23 @@ async def on_startup() -> None:
     if settings.USE_WEBHOOK:
         app.middlewares.append(prometheus_middleware_factory())
         app.router.add_route("GET", "/metrics", MetricsView)
+
+    # Миграция: изменение типа столбцов на BIGINT
+    try:
+        await migrate_telegram_id_to_bigint(engine)
+        logger.info("Миграция типов столбцов завершена")
+    except Exception as e:
+        logger.error(f"Миграция не удалась: {e}")
+        logger.warning("Продолжаем без миграции")
+
+    # Инициализация базы данных: создание таблиц
+    try:
+        async with engine.begin() as conn:
+            await conn.run_sync(Base.metadata.create_all)
+        logger.info("Database tables created (if not exist)")
+    except Exception as e:
+        logger.error(f"Database initialization failed: {e}")
+        logger.warning("Bot will continue without database")
 
     await set_default_commands(bot)
 
@@ -56,6 +76,10 @@ async def on_shutdown() -> None:
 
     await bot.delete_webhook()
     await bot.session.close()
+
+    # Закрытие пула соединений базы данных
+    await engine.dispose()
+    logger.info("Database connection pool closed")
 
     logger.info("bot stopped")
 

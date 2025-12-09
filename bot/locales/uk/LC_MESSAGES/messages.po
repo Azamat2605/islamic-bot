@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: messages. VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2024-01-15 12:58+0400\n"
+"POT-Creation-Date: 2025-12-08 23:11+0500\n"
 "PO-Revision-Date: 2024-01-14 14:51+0400\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: uk\n"
@@ -17,9 +17,10 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Generated-By: Babel 2.15.0\n"
+"Generated-By: Babel 2.17.0\n"
 
 #: bot/handlers/export_users.py:29
+#, python-brace-format
 msgid "user counter: <b>{count}</b>"
 msgstr ""
 
@@ -27,16 +28,121 @@ msgstr ""
 msgid "about"
 msgstr ""
 
-#: bot/handlers/menu.py:13 bot/handlers/start.py:16
+#: bot/handlers/main_menu.py:13
+msgid "Главное меню"
+msgstr ""
+
+#: bot/handlers/menu.py:13
 msgid "title main keyboard"
+msgstr ""
+
+#: bot/handlers/menu.py:19
+msgid "Wallet feature is under development"
+msgstr ""
+
+#: bot/handlers/menu.py:25
+msgid "Premium feature is under development"
 msgstr ""
 
 #: bot/handlers/support.py:13
 msgid "support text"
 msgstr ""
 
+#: bot/handlers/sections/profile_handlers.py:23
+msgid "Пользователь не найден. Используйте /start."
+msgstr ""
+
+#: bot/handlers/sections/profile_handlers.py:38
+#: bot/handlers/sections/profile_handlers.py:109
+#: bot/handlers/sections/profile_handlers.py:182
+#: bot/handlers/sections/profile_handlers.py:248
+#, python-brace-format
+msgid ""
+"👤 *Ваш профиль*\n"
+"\n"
+"📊 *Статистика*\n"
+"   Дней подряд: {streak_days}\n"
+"\n"
+"👤 *Аккаунт*\n"
+"   Имя: {full_name}\n"
+"   Юзернейм: @{username}\n"
+"   Пол: {gender}\n"
+"   Город: {city}\n"
+"\n"
+"⚙️ *Настройки*\n"
+"   Уведомления: {notifications}\n"
+"   Язык: {language}\n"
+msgstr ""
+
+#: bot/handlers/sections/profile_handlers.py:53
+#: bot/handlers/sections/profile_handlers.py:54
+#: bot/handlers/sections/profile_handlers.py:124
+#: bot/handlers/sections/profile_handlers.py:125
+#: bot/handlers/sections/profile_handlers.py:197
+#: bot/handlers/sections/profile_handlers.py:198
+#: bot/handlers/sections/profile_handlers.py:263
+#: bot/handlers/sections/profile_handlers.py:264
+msgid "Не указано"
+msgstr ""
+
+#: bot/handlers/sections/profile_handlers.py:55
+#: bot/handlers/sections/profile_handlers.py:126
+#: bot/handlers/sections/profile_handlers.py:199
+#: bot/handlers/sections/profile_handlers.py:265
+#: bot/keyboards/inline/profile.py:28
+msgid "Вкл"
+msgstr ""
+
+#: bot/handlers/sections/profile_handlers.py:55
+#: bot/handlers/sections/profile_handlers.py:126
+#: bot/handlers/sections/profile_handlers.py:199
+#: bot/handlers/sections/profile_handlers.py:265
+#: bot/keyboards/inline/profile.py:28
+msgid "Выкл"
+msgstr ""
+
+#: bot/handlers/sections/profile_handlers.py:71
+msgid "Введите ваш пол (например, Мужской, Женский):"
+msgstr ""
+
+#: bot/handlers/sections/profile_handlers.py:79
+msgid "Введите ваш город:"
+msgstr ""
+
+#: bot/handlers/sections/profile_handlers.py:93
+#: bot/handlers/sections/profile_handlers.py:166
+#: bot/handlers/sections/profile_handlers.py:231
+msgid "Пользователь не найден."
+msgstr ""
+
+#: bot/handlers/sections/profile_handlers.py:101
+#: bot/handlers/sections/profile_handlers.py:178
+#: bot/handlers/sections/profile_handlers.py:239
+msgid "Настройки не найдены."
+msgstr ""
+
+#: bot/handlers/sections/profile_handlers.py:158
+msgid "Неверный выбор."
+msgstr ""
+
+#: bot/handlers/sections/profile_handlers.py:208
+#: bot/handlers/sections/profile_handlers.py:290
+msgid "Пол обновлён."
+msgstr ""
+
+#: bot/handlers/sections/profile_handlers.py:215
+msgid "Действие отменено."
+msgstr ""
+
+#: bot/handlers/sections/profile_handlers.py:274
+msgid "Язык изменён."
+msgstr ""
+
+#: bot/handlers/sections/profile_handlers.py:307
+msgid "Город обновлён."
+msgstr ""
+
 #: bot/keyboards/inline/contacts.py:11 bot/keyboards/inline/contacts.py:22
-#: bot/keyboards/inline/menu.py:12
 msgid "support button"
 msgstr ""
 
@@ -52,12 +158,42 @@ msgstr ""
 msgid "premium button"
 msgstr ""
 
-#: bot/keyboards/inline/menu.py:11
-msgid "info button"
+#: bot/keyboards/inline/profile.py:15
+msgid "Изменить Пол"
 msgstr ""
 
-#: bot/middlewares/auth.py:41
-msgid "first message"
+#: bot/keyboards/inline/profile.py:21
+msgid "Изменить Город"
+msgstr ""
+
+#: bot/keyboards/inline/profile.py:27
+#, python-brace-format
+msgid "Уведомления: {status}"
+msgstr ""
+
+#: bot/keyboards/inline/profile.py:40
+#, python-brace-format
+msgid "Язык: {lang}"
+msgstr ""
+
+#: bot/keyboards/inline/profile.py:48
+msgid "Назад в меню"
+msgstr ""
+
+#: bot/keyboards/inline/profile.py:60
+msgid "Мужской"
+msgstr ""
+
+#: bot/keyboards/inline/profile.py:61
+msgid "Женский"
+msgstr ""
+
+#: bot/keyboards/inline/profile.py:64
+msgid "Другой"
+msgstr ""
+
+#: bot/keyboards/inline/profile.py:67 bot/keyboards/inline/profile.py:83
+msgid "Отмена"
 msgstr ""
 
 #~ msgid ""
@@ -66,3 +202,10 @@ msgstr ""
 #~ "\n"
 #~ "Чтобы начать пользоваться ботом можете начать с /menu"
 #~ msgstr ""
+
+#~ msgid "info button"
+#~ msgstr ""
+
+#~ msgid "first message"
+#~ msgstr ""
+

@@ -1,7 +1,9 @@
 from __future__ import annotations
 from pathlib import Path
 from typing import TYPE_CHECKING
+import json
 
+from pydantic import field_validator
 from pydantic_settings import BaseSettings, SettingsConfigDict
 
 if TYPE_CHECKING:
@@ -82,6 +84,21 @@ class Settings(BotSettings, DBSettings, CacheSettings):
     SENTRY_DSN: str | None = None
 
     AMPLITUDE_API_KEY: str  # or for example it could be POSTHOG_API_KEY
+    
+    ADMINS: list[int] = []
+
+    @field_validator("ADMINS", mode="before")
+    @classmethod
+    def parse_admins(cls, v: str | list[int]) -> list[int]:
+        if isinstance(v, str):
+            if v.strip() == "":
+                return []
+            # Support both JSON array and comma-separated values
+            if v.startswith("[") and v.endswith("]"):
+                return json.loads(v)
+            # Comma-separated string
+            return [int(x.strip()) for x in v.split(",") if x.strip()]
+        return v
 
 
 settings = Settings()
