@@ -1,7 +1,7 @@
 from aiogram import Router
 
 from . import export_users, info, start, support, main_menu
-from .admins import admin_panel
+from .admins import admin_panel, test_prayer
 from .sections import (
     islamic_router,
     profile_router,
@@ -22,7 +22,8 @@ def get_handlers_router() -> Router:
     router.include_router(support.router)
     router.include_router(main_menu.router)
     router.include_router(export_users.router)
-    router.include_router(admin_panel.router)
+    router.include_router(admin_panel)
+    router.include_router(test_prayer)
 
     # Подключаем роутеры разделов
     router.include_router(islamic_router)

@@ -6,6 +6,7 @@ from aiogram.utils.i18n.core import I18n
 from aiohttp import web
 
 from bot.core.config import DEFAULT_LOCALE, I18N_DOMAIN, LOCALES_DIR, settings
+from bot.services.scheduler import scheduler, setup_scheduler, start_scheduler, stop_scheduler
 
 app = web.Application()
 
@@ -47,3 +48,7 @@ class RedisStub:
         pass
 
 redis_client = RedisStub()
+
+# Устанавливаем экземпляр бота в планировщике
+from bot.services.scheduler import set_bot_instance
+set_bot_instance(bot)

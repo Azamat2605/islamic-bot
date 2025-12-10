@@ -89,6 +89,7 @@ async def get_user_language(session: AsyncSession, telegram_id: int) -> str:
     """
     Возвращает язык пользователя из таблицы Settings по telegram_id.
     Если запись не найдена, возвращает "ru".
+    Если язык не входит в список поддерживаемых, возвращает "ru".
     """
     print(f"DEBUG GETTER: Fetching language for telegram_id={telegram_id}")
     stmt = (
@@ -103,6 +104,13 @@ async def get_user_language(session: AsyncSession, telegram_id: int) -> str:
         print(f"DEBUG GETTER: No language found, returning 'ru'")
         return "ru"
     lang = languages[0]
+    
+    # Проверяем, что язык входит в список поддерживаемых
+    from bot.core.config import SUPPORTED_LOCALES
+    if lang not in SUPPORTED_LOCALES:
+        print(f"DEBUG GETTER: Language '{lang}' not in supported locales, returning 'ru'")
+        return "ru"
+    
     print(f"DEBUG GETTER: Returning language '{lang}' (Source: DB)")
     return lang
 
@@ -123,4 +131,42 @@ async def set_user_language(session: AsyncSession, user_id: int, language: str) 
         # Создаём запись Settings, если её нет (маловероятно)
         settings = Settings(user_id=user_id, language=language, notification_on=True)
         session.add(settings)
+        await session.commit()
+
+
+async def get_user_by_telegram_id(session: AsyncSession, telegram_id: int) -> User | None:
+    """Получить пользователя по telegram_id"""
+    stmt = select(User).where(User.telegram_id == telegram_id)
+    result = await session.execute(stmt)
+    return result.scalar_one_or_none()
+
+
+async def get_user_settings(session: AsyncSession, user_id: int) -> Settings | None:
+    """Получить настройки пользователя по user_id"""
+    stmt = select(Settings).where(Settings.user_id == user_id)
+    result = await session.execute(stmt)
+    return result.scalar_one_or_none()
+
+
+async def update_settings(session: AsyncSession, settings_id: int, update_data: dict) -> None:
+    """Обновить настройки"""
+    stmt = select(Settings).where(Settings.id == settings_id)
+    result = await session.execute(stmt)
+    settings = result.scalar_one_or_none()
+    if settings:
+        for key, value in update_data.items():
+            if hasattr(settings, key):
+                setattr(settings, key, value)
+        await session.commit()
+
+
+async def update_user(session: AsyncSession, user_id: int, update_data: dict) -> None:
+    """Обновить данные пользователя"""
+    stmt = select(User).where(User.id == user_id)
+    result = await session.execute(stmt)
+    user = result.scalar_one_or_none()
+    if user:
+        for key, value in update_data.items():
+            if hasattr(user, key):
+                setattr(user, key, value)
         await session.commit()

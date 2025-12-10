@@ -13,10 +13,11 @@ def register_middlewares(dp: Dispatcher) -> None:
 
     dp.update.outer_middleware(LoggingMiddleware())
 
+    # i18n должен быть ДО DatabaseMiddleware, потому что он использует сессию
+    ACLMiddleware(i18n=_i18n).setup(dp)
+
     dp.update.outer_middleware(DatabaseMiddleware())
 
     # dp.message.middleware(AuthMiddleware())  # Temporarily disabled due to missing DB
-
-    ACLMiddleware(i18n=_i18n).setup(dp)
 
     dp.callback_query.middleware(CallbackAnswerMiddleware())

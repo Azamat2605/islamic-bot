@@ -160,6 +160,7 @@ async def set_language_handler(
 ) -> None:
     """Установка языка."""
     lang = callback.data.split("_")[1]  # lang_ru, lang_en, etc.
+    logger.info(f"User {callback.from_user.id} changing language to {lang}")
     user = await session.execute(
         select(User).where(User.telegram_id == callback.from_user.id)
     )
@@ -182,6 +183,7 @@ async def set_language_handler(
 
     settings.language = lang
     await session.commit()
+    logger.info(f"Language saved to DB: {lang} for user_id {user.id}")
     
     # Инвалидация кэша для get_user_language (если используется)
     try:
@@ -191,13 +193,18 @@ async def set_language_handler(
 
     # Устанавливаем локаль для текущего контекста
     i18n.ctx_locale.set(lang)
+    current_locale = i18n.ctx_locale.get()
+    logger.info(f"Locale set to {lang} in context, current_locale = {current_locale}")
+    # Проверяем, какой перевод будет использован через i18n.gettext
+    test_translation = i18n.gettext("Язык изменён.")
+    logger.info(f"Translation test: '{test_translation}'")
     
     # Удаляем старое сообщение с настройками
     await callback.message.delete()
     
     # Отправляем новое сообщение с подтверждением и обновлённой главной клавиатурой
     await callback.message.answer(
-        _("Язык изменён."),
+        i18n.gettext("Язык изменён."),
         reply_markup=get_main_menu(),
     )
 

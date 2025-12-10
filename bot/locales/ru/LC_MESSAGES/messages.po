@@ -7,16 +7,15 @@ msgid ""
 msgstr ""
 "Project-Id-Version: messages. VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2025-12-08 23:11+0500\n"
+"POT-Creation-Date: 2025-12-10 14:26+0500\n"
 "PO-Revision-Date: 2024-01-15 12:59+0400\n"
 "Last-Translator: \n"
-"Language: ru\n"
 "Language-Team: ru <LL@li.org>\n"
-"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
-"n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+"Language: ru\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
 "Generated-By: Babel 2.17.0\n"
 
 #: bot/handlers/export_users.py:29
@@ -24,123 +23,268 @@ msgstr ""
 msgid "user counter: <b>{count}</b>"
 msgstr "кол-во пользователей: <b>{count}</b>"
 
-#: bot/handlers/info.py:11
+#: bot/handlers/info.py:12
 msgid "about"
 msgstr "ℹ️ <b>About</b>"
 
-#: bot/handlers/main_menu.py:13
+#: bot/handlers/main_menu.py:13 bot/handlers/menu.py:13
 msgid "Главное меню"
-msgstr ""
-
-#: bot/handlers/menu.py:13
-msgid "title main keyboard"
-msgstr "📒 <b>Главное меню</b>."
+msgstr "Главное меню"
 
 #: bot/handlers/menu.py:19
 msgid "Wallet feature is under development"
-msgstr ""
+msgstr "Wallet feature is under development"
 
 #: bot/handlers/menu.py:25
 msgid "Premium feature is under development"
-msgstr ""
+msgstr "Premium feature is under development"
 
-#: bot/handlers/support.py:13
+#: bot/handlers/start.py:25
+msgid ""
+"Здравствуйте! Это ваш бот-помощник. Воспользуйтесь меню ниже для навигации:"
+msgstr ""
+"Здравствуйте! Это ваш бот-помощник. Воспользуйтесь меню ниже для навигации:"
+
+#: bot/handlers/support.py:14
 msgid "support text"
 msgstr "🤝 Поддержка"
 
-#: bot/handlers/sections/profile_handlers.py:23
-msgid "Пользователь не найден. Используйте /start."
-msgstr ""
+#: bot/handlers/sections/profile_handlers.py:20
+#: bot/keyboards/inline/settings.py:82
+msgid "24h"
+msgstr "24h"
 
-#: bot/handlers/sections/profile_handlers.py:38
-#: bot/handlers/sections/profile_handlers.py:109
-#: bot/handlers/sections/profile_handlers.py:182
-#: bot/handlers/sections/profile_handlers.py:248
+#: bot/handlers/sections/profile_handlers.py:20
+#: bot/keyboards/inline/settings.py:82
+msgid "12h"
+msgstr "12h"
+
+#: bot/handlers/sections/profile_handlers.py:23
 #, python-brace-format
 msgid ""
 "👤 *Ваш профиль*\n"
 "\n"
-"📊 *Статистика*\n"
-"   Дней подряд: {streak_days}\n"
+"📊 *Статистика:*\n"
+"   • Дней подряд: *{streak_days}*\n"
 "\n"
-"👤 *Аккаунт*\n"
-"   Имя: {full_name}\n"
-"   Юзернейм: @{username}\n"
-"   Пол: {gender}\n"
-"   Город: {city}\n"
+"👤 *Аккаунт:*\n"
+"   • Имя: *{full_name}*\n"
+"   • Пол: *{gender}*\n"
+"   • Город: *{city}*\n"
 "\n"
-"⚙️ *Настройки*\n"
-"   Уведомления: {notifications}\n"
-"   Язык: {language}\n"
+"⚙️ *Настройки:*\n"
+"   • Язык: *{language}*\n"
+"   • Часовой пояс: *{timezone}*\n"
+"   • Формат времени: *{time_format}*\n"
 msgstr ""
+"👤 *Ваш профиль*\n"
+"\n"
+"📊 *Статистика:*\n"
+"   • Дней подряд: *{streak_days}*\n"
+"\n"
+"👤 *Аккаунт:*\n"
+"   • Имя: *{full_name}*\n"
+"   • Пол: *{gender}*\n"
+"   • Город: *{city}*\n"
+"\n"
+"⚙️ *Настройки:*\n"
+"   • Язык: *{language}*\n"
+"   • Часовой пояс: *{timezone}*\n"
+"   • Формат времени: *{time_format}*\n"
 
-#: bot/handlers/sections/profile_handlers.py:53
-#: bot/handlers/sections/profile_handlers.py:54
-#: bot/handlers/sections/profile_handlers.py:124
-#: bot/handlers/sections/profile_handlers.py:125
-#: bot/handlers/sections/profile_handlers.py:197
-#: bot/handlers/sections/profile_handlers.py:198
-#: bot/handlers/sections/profile_handlers.py:263
-#: bot/handlers/sections/profile_handlers.py:264
+#: bot/handlers/sections/profile_handlers.py:37
+#: bot/handlers/sections/profile_handlers.py:38
 msgid "Не указано"
-msgstr ""
-
-#: bot/handlers/sections/profile_handlers.py:55
-#: bot/handlers/sections/profile_handlers.py:126
-#: bot/handlers/sections/profile_handlers.py:199
-#: bot/handlers/sections/profile_handlers.py:265
-#: bot/keyboards/inline/profile.py:28
-msgid "Вкл"
-msgstr ""
-
-#: bot/handlers/sections/profile_handlers.py:55
-#: bot/handlers/sections/profile_handlers.py:126
-#: bot/handlers/sections/profile_handlers.py:199
-#: bot/handlers/sections/profile_handlers.py:265
-#: bot/keyboards/inline/profile.py:28
-msgid "Выкл"
-msgstr ""
-
-#: bot/handlers/sections/profile_handlers.py:71
-msgid "Введите ваш пол (например, Мужской, Женский):"
-msgstr ""
+msgstr "Не указано"
 
 #: bot/handlers/sections/profile_handlers.py:79
+msgid "Введите ваш пол (например, Мужской, Женский):"
+msgstr "Введите ваш пол (например, Мужской, Женский):"
+
+#: bot/handlers/sections/profile_handlers.py:87
 msgid "Введите ваш город:"
-msgstr ""
+msgstr "Введите ваш город:"
 
-#: bot/handlers/sections/profile_handlers.py:93
-#: bot/handlers/sections/profile_handlers.py:166
-#: bot/handlers/sections/profile_handlers.py:231
-msgid "Пользователь не найден."
-msgstr ""
-
-#: bot/handlers/sections/profile_handlers.py:101
-#: bot/handlers/sections/profile_handlers.py:178
-#: bot/handlers/sections/profile_handlers.py:239
-msgid "Настройки не найдены."
-msgstr ""
-
-#: bot/handlers/sections/profile_handlers.py:158
+#: bot/handlers/sections/profile_handlers.py:106
 msgid "Неверный выбор."
-msgstr ""
+msgstr "Неверный выбор."
 
-#: bot/handlers/sections/profile_handlers.py:208
-#: bot/handlers/sections/profile_handlers.py:290
+#: bot/handlers/sections/profile_handlers.py:114
+#: bot/handlers/sections/profile_handlers.py:169
+#: bot/handlers/sections/settings_handlers.py:34
+#: bot/handlers/sections/settings_handlers.py:54
+#: bot/handlers/sections/settings_handlers.py:74
+#: bot/handlers/sections/settings_handlers.py:121
+#: bot/handlers/sections/settings_handlers.py:148
+#: bot/handlers/sections/settings_handlers.py:168
+#: bot/handlers/sections/settings_handlers.py:225
+#: bot/handlers/sections/settings_handlers.py:269
+#: bot/handlers/sections/settings_handlers.py:310
+#: bot/handlers/sections/settings_handlers.py:346
+#: bot/handlers/sections/settings_handlers.py:383
+msgid "Пользователь не найден."
+msgstr "Пользователь не найден."
+
+#: bot/handlers/sections/profile_handlers.py:126
+#: bot/handlers/sections/profile_handlers.py:178
+msgid "Настройки не найдены."
+msgstr "Настройки не найдены."
+
+#: bot/handlers/sections/profile_handlers.py:138
+#: bot/handlers/sections/profile_handlers.py:225
 msgid "Пол обновлён."
-msgstr ""
+msgstr "Пол обновлён."
 
-#: bot/handlers/sections/profile_handlers.py:215
+#: bot/handlers/sections/profile_handlers.py:145
 msgid "Действие отменено."
-msgstr ""
+msgstr "Действие отменено."
 
-#: bot/handlers/sections/profile_handlers.py:274
+#: bot/handlers/sections/profile_handlers.py:199
+#: bot/handlers/sections/profile_handlers.py:207
 msgid "Язык изменён."
-msgstr ""
+msgstr "Язык изменён."
 
-#: bot/handlers/sections/profile_handlers.py:307
+#: bot/handlers/sections/profile_handlers.py:242
 msgid "Город обновлён."
+msgstr "Город обновлён."
+
+#: bot/handlers/sections/settings_handlers.py:38
+#: bot/handlers/sections/settings_handlers.py:152
+msgid ""
+"⚙️ Настройки\n"
+"\n"
+"Выберите категорию настроек:"
 msgstr ""
+"⚙️ Настройки\n"
+"\n"
+"Выберите категорию настроек:"
+
+#: bot/handlers/sections/settings_handlers.py:58
+#: bot/handlers/sections/settings_handlers.py:172
+#: bot/keyboards/inline/settings.py:14
+msgid "⚙️ Общие настройки"
+msgstr "⚙️ Общие настройки"
+
+#: bot/handlers/sections/settings_handlers.py:78
+msgid "🔔 Управление уведомлениями"
+msgstr "🔔 Управление уведомлениями"
+
+#: bot/handlers/sections/settings_handlers.py:90
+msgid "Информация о проекте и помощь"
+msgstr "Информация о проекте и помощь"
+
+#: bot/handlers/sections/settings_handlers.py:103
+msgid "Введите новое имя (от 2 до 100 символов):"
+msgstr "Введите новое имя (от 2 до 100 символов):"
+
+#: bot/handlers/sections/settings_handlers.py:193
+msgid "⏳ Выберите часовой пояс:"
+msgstr "⏳ Выберите часовой пояс:"
+
+#: bot/handlers/sections/settings_handlers.py:207
+msgid "🕒 Выберите формат времени:"
+msgstr "🕒 Выберите формат времени:"
+
+#: bot/handlers/sections/settings_handlers.py:231
+#, python-brace-format
+msgid "Общие уведомления {}"
+msgstr "Общие уведомления {}"
+
+#: bot/handlers/sections/settings_handlers.py:232
+#: bot/handlers/sections/settings_handlers.py:237
+#: bot/handlers/sections/settings_handlers.py:242
+msgid "включены"
+msgstr "включены"
+
+#: bot/handlers/sections/settings_handlers.py:232
+#: bot/handlers/sections/settings_handlers.py:237
+#: bot/handlers/sections/settings_handlers.py:242
+msgid "выключены"
+msgstr "выключены"
+
+#: bot/handlers/sections/settings_handlers.py:236
+#, python-brace-format
+msgid "Уведомления о намазах {}"
+msgstr "Уведомления о намазах {}"
+
+#: bot/handlers/sections/settings_handlers.py:241
+#, python-brace-format
+msgid "Уведомления о событиях {}"
+msgstr "Уведомления о событиях {}"
+
+#: bot/handlers/sections/settings_handlers.py:245
+msgid "Неизвестная настройка."
+msgstr "Неизвестная настройка."
+
+#: bot/handlers/sections/settings_handlers.py:276
+#: bot/handlers/sections/settings_handlers.py:358
+#, python-brace-format
+msgid "⏳ Часовой пояс обновлен на: {tz}"
+msgstr "⏳ Часовой пояс обновлен на: {tz}"
+
+#: bot/handlers/sections/settings_handlers.py:289
+msgid "Введите часовой пояс (например, Europe/Moscow или +3):"
+msgstr "Введите часовой пояс (например, Europe/Moscow или +3):"
+
+#: bot/handlers/sections/settings_handlers.py:316
+#: bot/keyboards/inline/settings.py:194
+msgid "24-часовой"
+msgstr "24-часовой"
+
+#: bot/handlers/sections/settings_handlers.py:316
+#: bot/keyboards/inline/settings.py:200
+msgid "12-часовой"
+msgstr "12-часовой"
+
+#: bot/handlers/sections/settings_handlers.py:318
+#, python-brace-format
+msgid "� Формат времени обновлен на: {fmt}"
+msgstr "� Формат времени обновлен на: {fmt}"
+
+#: bot/handlers/sections/settings_handlers.py:339
+msgid "Пожалуйста, введите часовой пояс."
+msgstr "Пожалуйста, введите часовой пояс."
+
+#: bot/handlers/sections/settings_handlers.py:375
+msgid "Имя должно содержать от 2 до 100 символов. Попробуйте снова:"
+msgstr "Имя должно содержать от 2 до 100 символов. Попробуйте снова:"
+
+#: bot/handlers/sections/settings_handlers.py:395
+#, python-brace-format
+msgid "✅ Имя успешно обновлено на: {name}"
+msgstr "✅ Имя успешно обновлено на: {name}"
+
+#: bot/handlers/sections/stubs.py:18
+msgid "Кнопка пока в разработке"
+msgstr "Кнопка пока в разработке"
+
+#: bot/keyboards/main_menu.py:9
+msgid "📢 Исламский помощник"
+msgstr "📢 Исламский помощник"
+
+#: bot/keyboards/main_menu.py:11
+msgid "👤 МОЙ ПРОФИЛЬ / НАСТРОЙКИ"
+msgstr "👤 МОЙ ПРОФИЛЬ / НАСТРОЙКИ"
+
+#: bot/keyboards/main_menu.py:12 bot/keyboards/reply/__init__.py:25
+msgid "Знания"
+msgstr "Знания"
+
+#: bot/keyboards/main_menu.py:15 bot/keyboards/reply/__init__.py:21
+msgid "Обучение"
+msgstr "Обучение"
+
+#: bot/keyboards/main_menu.py:16 bot/keyboards/reply/__init__.py:17
+msgid "Расписание намазов"
+msgstr "Расписание намазов"
+
+#: bot/keyboards/main_menu.py:19 bot/keyboards/reply/__init__.py:18
+msgid "Халяль места"
+msgstr "Халяль места"
+
+#: bot/keyboards/main_menu.py:20 bot/keyboards/reply/__init__.py:22
+msgid "Календарь событий"
+msgstr "Календарь событий"
 
 #: bot/keyboards/inline/contacts.py:11 bot/keyboards/inline/contacts.py:22
 msgid "support button"
@@ -159,42 +303,152 @@ msgid "premium button"
 msgstr "🆙 Получить PREMIUM"
 
 #: bot/keyboards/inline/profile.py:15
-msgid "Изменить Пол"
-msgstr ""
+msgid "⚙️ Настройки"
+msgstr "⚙️ Настройки"
 
-#: bot/keyboards/inline/profile.py:21
-msgid "Изменить Город"
-msgstr ""
+#: bot/keyboards/inline/profile.py:19
+msgid "🔙 Назад в меню"
+msgstr "🔙 Назад в меню"
 
-#: bot/keyboards/inline/profile.py:27
-#, python-brace-format
-msgid "Уведомления: {status}"
-msgstr ""
+#: bot/keyboards/inline/profile.py:28
+msgid "ℹ️ О проекте и Поддержка"
+msgstr "ℹ️ О проекте и Поддержка"
 
 #: bot/keyboards/inline/profile.py:40
-#, python-brace-format
-msgid "Язык: {lang}"
-msgstr ""
-
-#: bot/keyboards/inline/profile.py:48
-msgid "Назад в меню"
-msgstr ""
-
-#: bot/keyboards/inline/profile.py:60
 msgid "Мужской"
-msgstr ""
+msgstr "Мужской"
+
+#: bot/keyboards/inline/profile.py:41
+msgid "Женский"
+msgstr "Женский"
+
+#: bot/keyboards/inline/profile.py:44
+msgid "Другой"
+msgstr "Другой"
+
+#: bot/keyboards/inline/profile.py:47 bot/keyboards/inline/profile.py:68
+msgid "Отмена"
+msgstr "Отмена"
+
+#: bot/keyboards/inline/profile.py:57
+msgid "🇷🇺 Русский"
+msgstr "🇷🇺 Русский"
+
+#: bot/keyboards/inline/profile.py:58
+msgid "🇬🇧 English"
+msgstr "🇬🇧 English"
 
 #: bot/keyboards/inline/profile.py:61
-msgid "Женский"
-msgstr ""
+msgid "🇸🇦 العربية"
+msgstr "🇸🇦 العربية"
 
-#: bot/keyboards/inline/profile.py:64
-msgid "Другой"
-msgstr ""
+#: bot/keyboards/inline/profile.py:62
+msgid "🏴 Татарча"
+msgstr "🏴 Татарча"
 
-#: bot/keyboards/inline/profile.py:67 bot/keyboards/inline/profile.py:83
-msgid "Отмена"
-msgstr ""
+#: bot/keyboards/inline/profile.py:65
+msgid "🏴 Башҡортса"
+msgstr "🏴 Башҡортса"
+
+#: bot/keyboards/inline/settings.py:20
+msgid "🔔 Уведомления"
+msgstr "🔔 Уведомления"
+
+#: bot/keyboards/inline/settings.py:26
+msgid "↩️ Назад в Профиль"
+msgstr "↩️ Назад в Профиль"
+
+#: bot/keyboards/inline/settings.py:39
+#, python-brace-format
+msgid "✏️ Изменить Имя ({name})"
+msgstr "✏️ Изменить Имя ({name})"
+
+#: bot/keyboards/inline/settings.py:47
+#, python-brace-format
+msgid "Изменить Пол ({gender})"
+msgstr "Изменить Пол ({gender})"
+
+#: bot/keyboards/inline/settings.py:55
+#, python-brace-format
+msgid "Изменить Город ({city})"
+msgstr "Изменить Город ({city})"
+
+#: bot/keyboards/inline/settings.py:64
+#, python-brace-format
+msgid "🇷🇺 Язык: {lang}"
+msgstr "🇷🇺 Язык: {lang}"
+
+#: bot/keyboards/inline/settings.py:73
+#, python-brace-format
+msgid "⏳ Часовой пояс: {tz}"
+msgstr "⏳ Часовой пояс: {tz}"
+
+#: bot/keyboards/inline/settings.py:83
+#, python-brace-format
+msgid "🕒 Формат времени: {fmt}"
+msgstr "🕒 Формат времени: {fmt}"
+
+#: bot/keyboards/inline/settings.py:94 bot/keyboards/inline/settings.py:139
+#: bot/keyboards/inline/settings.py:245
+msgid "↩️ Назад в Настройки"
+msgstr "↩️ Назад в Настройки"
+
+#: bot/keyboards/inline/settings.py:107 bot/keyboards/inline/settings.py:117
+#: bot/keyboards/inline/settings.py:127
+msgid "Вкл"
+msgstr "Вкл"
+
+#: bot/keyboards/inline/settings.py:107 bot/keyboards/inline/settings.py:117
+#: bot/keyboards/inline/settings.py:127
+msgid "Выкл"
+msgstr "Выкл"
+
+#: bot/keyboards/inline/settings.py:108
+#, python-brace-format
+msgid "🔔 Общие: {status}"
+msgstr "🔔 Общие: {status}"
+
+#: bot/keyboards/inline/settings.py:118
+#, python-brace-format
+msgid "🕌 Намазы: {status}"
+msgstr "🕌 Намазы: {status}"
+
+#: bot/keyboards/inline/settings.py:128
+#, python-brace-format
+msgid "📅 События: {status}"
+msgstr "📅 События: {status}"
+
+#: bot/keyboards/inline/settings.py:172
+msgid "✏️ Ввести вручную"
+msgstr "✏️ Ввести вручную"
+
+#: bot/keyboards/inline/settings.py:178 bot/keyboards/inline/settings.py:206
+msgid "↩️ Назад"
+msgstr "↩️ Назад"
+
+#: bot/keyboards/inline/settings.py:221
+msgid "💰 Помощь проекту"
+msgstr "💰 Помощь проекту"
+
+#: bot/keyboards/inline/settings.py:229
+msgid "🆘 Поддержка"
+msgstr "🆘 Поддержка"
+
+#: bot/keyboards/inline/settings.py:237
+msgid "📖 О проекте"
+msgstr "📖 О проекте"
+
+#: bot/keyboards/reply/__init__.py:13
+msgid "Исламский помошник"
+msgstr "Исламский помошник"
+
+#: bot/keyboards/reply/__init__.py:14
+msgid "👤 Мой профиль"
+msgstr "👤 Мой профиль"
+
+#: bot/keyboards/reply/__init__.py:32
+msgid "Выберите действие"
+msgstr "Выберите действие"
 
 #~ msgid ""
 #~ "👋 <b>Добро пожаловать в бот.</b>\n"
@@ -216,3 +470,57 @@ msgstr ""
 #~ "\n"
 #~ "Чтобы начать пользоваться ботом можете начать с /menu"
 
+#~ msgid "title main keyboard"
+#~ msgstr "📒 <b>Главное меню</b>."
+
+#~ msgid "Пользователь не найден. Используйте /start."
+#~ msgstr "Пользователь не найден. Используйте /start."
+
+#~ msgid ""
+#~ "👤 *Ваш профиль*\n"
+#~ "\n"
+#~ "📊 *Статистика*\n"
+#~ "   Дней подряд: {streak_days}\n"
+#~ "\n"
+#~ "👤 *Аккаунт*\n"
+#~ "   Имя: {full_name}\n"
+#~ "   Юзернейм: @{username}\n"
+#~ "   Пол: {gender}\n"
+#~ "   Город: {city}\n"
+#~ "\n"
+#~ "⚙️ *Настройки*\n"
+#~ "   Уведомления: {notifications}\n"
+#~ "   Язык: {language}\n"
+#~ msgstr ""
+#~ "👤 *Ваш профиль*\n"
+#~ "\n"
+#~ "📊 *Статистика*\n"
+#~ "   Дней подряд: {streak_days}\n"
+#~ "\n"
+#~ "👤 *Аккаунт*\n"
+#~ "   Имя: {full_name}\n"
+#~ "   Юзернейм: @{username}\n"
+#~ "   Пол: {gender}\n"
+#~ "   Город: {city}\n"
+#~ "\n"
+#~ "⚙️ *Настройки*\n"
+#~ "   Уведомления: {notifications}\n"
+#~ "   Язык: {language}\n"
+
+#~ msgid "Уведомления: {status}"
+#~ msgstr "Уведомления: {status}"
+
+#~ msgid "Язык: {lang}"
+#~ msgstr "Язык: {lang}"
+
+#~ msgid "Назад в меню"
+#~ msgstr "Назад в меню"
+
+#~ msgid "✏️ Изменить Имя"
+#~ msgstr "✏️ Изменить Имя"
+
+#~ msgid "Изменить Пол"
+#~ msgstr "Изменить Пол"
+
+#~ msgid "Изменить Город"
+#~ msgstr "Изменить Город"

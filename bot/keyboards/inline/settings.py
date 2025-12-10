@@ -36,23 +36,26 @@ def settings_general_keyboard(user, settings: Settings) -> InlineKeyboardMarkup:
     builder = InlineKeyboardBuilder()
     
     # Кнопки редактирования профиля
+    name_text = _("✏️ Изменить Имя ({name})").format(name=user.full_name or "—")
     builder.row(
         InlineKeyboardButton(
-            text=_("✏️ Изменить Имя") + f" ({user.full_name or '—'})",
+            text=name_text,
             callback_data="edit_name",
         ),
     )
+    
+    gender_text = _("Изменить Пол ({gender})").format(gender=user.gender or "—")
     builder.row(
         InlineKeyboardButton(
-            text=_("Изменить Пол") + f" ({user.gender or '—'})",
+            text=gender_text,
             callback_data="edit_gender",
         ),
-        
     )
     
+    city_text = _("Изменить Город ({city})").format(city=user.city or "—")
     builder.row(
         InlineKeyboardButton(
-            text=_("Изменить Город") + f" ({user.city or '—'})",
+            text=city_text,
             callback_data="edit_city",
         )
     )
@@ -188,13 +191,13 @@ def time_format_keyboard() -> InlineKeyboardMarkup:
     
     builder.row(
         InlineKeyboardButton(
-            text="24-часовой",
+            text=_("24-часовой"),
             callback_data="time_format_select:24h",
         )
     )
     builder.row(
         InlineKeyboardButton(
-            text="12-часовой",
+            text=_("12-часовой"),
             callback_data="time_format_select:12h",
         )
     )

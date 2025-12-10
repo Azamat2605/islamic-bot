@@ -52,12 +52,17 @@ def gender_keyboard() -> InlineKeyboardMarkup:
 def language_keyboard() -> InlineKeyboardMarkup:
     """Клавиатура для выбора языка."""
     builder = InlineKeyboardBuilder()
+    # Ряды по 2 кнопки - только оставляемые языки
     builder.row(
-        InlineKeyboardButton(text="🇷🇺 Русский", callback_data="lang_ru"),
-        InlineKeyboardButton(text="🇬🇧 English", callback_data="lang_en"),
+        InlineKeyboardButton(text=_("🇷🇺 Русский"), callback_data="lang_ru"),
+        InlineKeyboardButton(text=_("🇬🇧 English"), callback_data="lang_en"),
     )
     builder.row(
-        InlineKeyboardButton(text="🇺🇦 Українська", callback_data="lang_uk"),
+        InlineKeyboardButton(text=_("🇸🇦 العربية"), callback_data="lang_ar"),
+        InlineKeyboardButton(text=_("🏴 Татарча"), callback_data="lang_tt"),
+    )
+    builder.row(
+        InlineKeyboardButton(text=_("🏴 Башҡортса"), callback_data="lang_ba"),
     )
     builder.row(
         InlineKeyboardButton(text=_("Отмена"), callback_data="cancel"),

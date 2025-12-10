@@ -6,18 +6,18 @@ from aiogram.utils.keyboard import InlineKeyboardBuilder
 def main_menu_keyboard() -> InlineKeyboardMarkup:
     """Главное меню с 7 кнопками."""
     buttons = [
-        [InlineKeyboardButton(text="📢 Исламский помощник", callback_data="islamic_assistant")],
+        [InlineKeyboardButton(text=_("📢 Исламский помощник"), callback_data="islamic_assistant")],
         [
-            InlineKeyboardButton(text="👤 МОЙ ПРОФИЛЬ / НАСТРОЙКИ", callback_data="profile_settings"),
-            InlineKeyboardButton(text="Знания", callback_data="knowledge"),
+            InlineKeyboardButton(text=_("👤 МОЙ ПРОФИЛЬ / НАСТРОЙКИ"), callback_data="profile_settings"),
+            InlineKeyboardButton(text=_("Знания"), callback_data="knowledge"),
         ],
         [
-            InlineKeyboardButton(text="Обучение", callback_data="education"),
-            InlineKeyboardButton(text="Расписание намазов", callback_data="prayer_schedule"),
+            InlineKeyboardButton(text=_("Обучение"), callback_data="education"),
+            InlineKeyboardButton(text=_("Расписание намазов"), callback_data="prayer_schedule"),
         ],
         [
-            InlineKeyboardButton(text="Халяль места", callback_data="halal_places"),
-            InlineKeyboardButton(text="Календарь событий", callback_data="events_calendar"),
+            InlineKeyboardButton(text=_("Халяль места"), callback_data="halal_places"),
+            InlineKeyboardButton(text=_("Календарь событий"), callback_data="events_calendar"),
         ],
     ]
 

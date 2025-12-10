@@ -1,17 +1,17 @@
-# English translations for messages..
-# Copyright (C) 2024 ORGANIZATION
-# This file is distributed under the same license as the messages. project.
-# FIRST AUTHOR <EMAIL@ADDRESS>, 2024.
+# Tatar translations for messages.
+# Copyright (C) 2025 ORGANIZATION
+# This file is distributed under the same license as the messages project.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2025.
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: messages. VERSION\n"
+"Project-Id-Version: messages VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
 "POT-Creation-Date: 2025-12-10 14:26+0500\n"
-"PO-Revision-Date: 2024-01-14 14:51+0400\n"
+"PO-Revision-Date: 2025-12-09 18:14+0500\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: en <LL@li.org>\n"
-"Language: en\n"
+"Language-Team: tt <LL@li.org>\n"
+"Language: tt\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -21,43 +21,42 @@ msgstr ""
 #: bot/handlers/export_users.py:29
 #, python-brace-format
 msgid "user counter: <b>{count}</b>"
-msgstr "user counter: <b>{count}"
+msgstr "Кулланучы счетчик: <b> {санау} </ b>"
 
 #: bot/handlers/info.py:12
 msgid "about"
-msgstr "ℹ️ <b>About</b>"
+msgstr "турында"
 
 #: bot/handlers/main_menu.py:13 bot/handlers/menu.py:13
 msgid "Главное меню"
-msgstr "Main Menu"
+msgstr "Төп меню"
 
 #: bot/handlers/menu.py:19
 msgid "Wallet feature is under development"
-msgstr "Wallet feature is under development"
+msgstr "Капчык функциясе үсеш ала"
 
 #: bot/handlers/menu.py:25
 msgid "Premium feature is under development"
-msgstr "Premium feature is under development"
+msgstr "Премиум үзенчәлеге дәвам итә"
 
 #: bot/handlers/start.py:25
 msgid ""
 "Здравствуйте! Это ваш бот-помощник. Воспользуйтесь меню ниже для навигации:"
-msgstr ""
-"Здравствуйте! Это ваш бот-помощник. Воспользуйтесь меню ниже для навигации:"
+msgstr "Сәлам! Бу сезнең ярдәмче. Навигация өчен түбәндәге менюны кулланыгыз:"
 
 #: bot/handlers/support.py:14
 msgid "support text"
-msgstr "🤝 Support"
+msgstr "Текстка булышу"
 
 #: bot/handlers/sections/profile_handlers.py:20
 #: bot/keyboards/inline/settings.py:82
 msgid "24h"
-msgstr "24h"
+msgstr "24 сәгать"
 
 #: bot/handlers/sections/profile_handlers.py:20
 #: bot/keyboards/inline/settings.py:82
 msgid "12h"
-msgstr "12h"
+msgstr "12 сәгать"
 
 #: bot/handlers/sections/profile_handlers.py:23
 #, fuzzy, python-brace-format
@@ -77,37 +76,37 @@ msgid ""
 "   • Часовой пояс: *{timezone}*\n"
 "   • Формат времени: *{time_format}*\n"
 msgstr ""
-"👤 *Your Profile*\n"
+"👤 * сезнең профиль *\n"
 "\n"
-"📊 *Statistics*\n"
-"   Streak days: {streak_days}\n"
+"📊 * Статистика *\n"
+"   Берничә көннәр рәттән: {Stak_days}\n"
 "\n"
-"👤 *Account*\n"
-"   Name: {full_name}\n"
-"   Username: @{username}\n"
-"   Gender: {gender}\n"
-"   City: {city}\n"
+"👤 * Хисап *\n"
+"   Исем: {тулы_ исем}\n"
+"   Кулланучының исеме: @ {кулланучы исеме}\n"
+"   Гендер: {җенес}\n"
+"   Шәһәр: {in}\n"
 "\n"
-"⚙️ *Settings*\n"
-"   Notifications: {notifications}\n"
-"   Language: {language}\n"
+"⚙️ * көйләүләр *\n"
+"   Хәбәрләр: {хәбәр итү}\n"
+"   Тел: {тел}"
 
 #: bot/handlers/sections/profile_handlers.py:37
 #: bot/handlers/sections/profile_handlers.py:38
 msgid "Не указано"
-msgstr "Not specified"
+msgstr "Күрсәтелмәгән"
 
 #: bot/handlers/sections/profile_handlers.py:79
 msgid "Введите ваш пол (например, Мужской, Женский):"
-msgstr "Enter your gender (e.g., Male, Female):"
+msgstr "Generз җенесегезгә керегез (мәсәлән, ир-ат, хатын-кыз):"
 
 #: bot/handlers/sections/profile_handlers.py:87
 msgid "Введите ваш город:"
-msgstr "Enter your city:"
+msgstr "Сезнең шәһәргә керегез:"
 
 #: bot/handlers/sections/profile_handlers.py:106
 msgid "Неверный выбор."
-msgstr "Invalid choice."
+msgstr "Ялгыш сайлау."
 
 #: bot/handlers/sections/profile_handlers.py:114
 #: bot/handlers/sections/profile_handlers.py:169
@@ -123,30 +122,30 @@ msgstr "Invalid choice."
 #: bot/handlers/sections/settings_handlers.py:346
 #: bot/handlers/sections/settings_handlers.py:383
 msgid "Пользователь не найден."
-msgstr "User not found."
+msgstr "Кулланучы табылмады."
 
 #: bot/handlers/sections/profile_handlers.py:126
 #: bot/handlers/sections/profile_handlers.py:178
 msgid "Настройки не найдены."
-msgstr "Settings not found."
+msgstr "Көйләүләр табылмады."
 
 #: bot/handlers/sections/profile_handlers.py:138
 #: bot/handlers/sections/profile_handlers.py:225
 msgid "Пол обновлён."
-msgstr "Gender updated."
+msgstr "Идән яңартылды."
 
 #: bot/handlers/sections/profile_handlers.py:145
 msgid "Действие отменено."
-msgstr "Action cancelled."
+msgstr "Эш юкка чыгарылды."
 
 #: bot/handlers/sections/profile_handlers.py:199
 #: bot/handlers/sections/profile_handlers.py:207
 msgid "Язык изменён."
-msgstr "Language changed."
+msgstr "Тел үзгәртелде."
 
 #: bot/handlers/sections/profile_handlers.py:242
 msgid "Город обновлён."
-msgstr "City updated."
+msgstr "Шәһәр яңартылды."
 
 #: bot/handlers/sections/settings_handlers.py:38
 #: bot/handlers/sections/settings_handlers.py:152
@@ -155,191 +154,190 @@ msgid ""
 "\n"
 "Выберите категорию настроек:"
 msgstr ""
-"⚙️ Настройки\n"
+"⚙️цитинг\n"
 "\n"
-"Выберите категорию настроек:"
+"Көйләү категориясен сайлагыз:"
 
 #: bot/handlers/sections/settings_handlers.py:58
 #: bot/handlers/sections/settings_handlers.py:172
 #: bot/keyboards/inline/settings.py:14
 msgid "⚙️ Общие настройки"
-msgstr "⚙️ General Settings"
+msgstr "⚙️ Гомуми көйләүләр"
 
 #: bot/handlers/sections/settings_handlers.py:78
 msgid "🔔 Управление уведомлениями"
-msgstr "🔔 Notification Management"
+msgstr "🔔 Хәбәрләр белән идарә итү"
 
 #: bot/handlers/sections/settings_handlers.py:90
 msgid "Информация о проекте и помощь"
-msgstr "ℹ️ Project Information and Help"
+msgstr "Проект турында мәгълүмат һәм ярдәм"
 
 #: bot/handlers/sections/settings_handlers.py:103
 msgid "Введите новое имя (от 2 до 100 символов):"
-msgstr "Введите новое имя (от 2 до 100 символов):"
+msgstr "Яңа исем кертегез (2 дән 100 символга кадәр):"
 
 #: bot/handlers/sections/settings_handlers.py:193
-#, fuzzy
 msgid "⏳ Выберите часовой пояс:"
-msgstr "⏳ Timezone: {tz}"
+msgstr "Pace Вакыт зонасын сайлагыз:"
 
 #: bot/handlers/sections/settings_handlers.py:207
-#, fuzzy
 msgid "🕒 Выберите формат времени:"
-msgstr "🕒 Time Format: {fmt}"
+msgstr "Time Вакыт форматын сайлагыз:"
 
 #: bot/handlers/sections/settings_handlers.py:231
 #, fuzzy, python-brace-format
 msgid "Общие уведомления {}"
-msgstr "🔔 Notifications"
+msgstr "Хәбәрләр: {статус}"
 
 #: bot/handlers/sections/settings_handlers.py:232
 #: bot/handlers/sections/settings_handlers.py:237
 #: bot/handlers/sections/settings_handlers.py:242
 msgid "включены"
-msgstr "включены"
+msgstr "кертелгән"
 
 #: bot/handlers/sections/settings_handlers.py:232
 #: bot/handlers/sections/settings_handlers.py:237
 #: bot/handlers/sections/settings_handlers.py:242
 #, fuzzy
 msgid "выключены"
-msgstr "Off"
+msgstr "Сүндерелгән"
 
 #: bot/handlers/sections/settings_handlers.py:236
 #, fuzzy, python-brace-format
 msgid "Уведомления о намазах {}"
-msgstr "Notifications: {status}"
+msgstr "Хәбәрләр: {статус}"
 
 #: bot/handlers/sections/settings_handlers.py:241
 #, fuzzy, python-brace-format
 msgid "Уведомления о событиях {}"
-msgstr "Notifications: {status}"
+msgstr "Хәбәрләр: {статус}"
 
 #: bot/handlers/sections/settings_handlers.py:245
 msgid "Неизвестная настройка."
-msgstr "Неизвестная настройка."
+msgstr "Билгесез көйләү."
 
 #: bot/handlers/sections/settings_handlers.py:276
 #: bot/handlers/sections/settings_handlers.py:358
-#, fuzzy, python-brace-format
+#, python-brace-format
 msgid "⏳ Часовой пояс обновлен на: {tz}"
-msgstr "⏳ Timezone: {tz}"
+msgstr "⏳ Вакыт зонасы яңартылды: {tz}"
 
 #: bot/handlers/sections/settings_handlers.py:289
 msgid "Введите часовой пояс (например, Europe/Moscow или +3):"
-msgstr "Введите часовой пояс (например, Europe/Moscow или +3):"
+msgstr "Вакыт зонасына керегез (мәсәлән, Европа / Мәскәү яки +3):"
 
 #: bot/handlers/sections/settings_handlers.py:316
 #: bot/keyboards/inline/settings.py:194
 msgid "24-часовой"
-msgstr "24-часовой"
+msgstr "24 сәгать"
 
 #: bot/handlers/sections/settings_handlers.py:316
 #: bot/keyboards/inline/settings.py:200
 msgid "12-часовой"
-msgstr "12-часовой"
+msgstr "12 сәгать"
 
 #: bot/handlers/sections/settings_handlers.py:318
-#, fuzzy, python-brace-format
+#, python-brace-format
 msgid "� Формат времени обновлен на: {fmt}"
-msgstr "🕒 Time Format: {fmt}"
+msgstr "� Вакыт форматы яңартылды: {fmt}"
 
 #: bot/handlers/sections/settings_handlers.py:339
 msgid "Пожалуйста, введите часовой пояс."
-msgstr "Пожалуйста, введите часовой пояс."
+msgstr "Зинһар, вакыт зонасын кертегез."
 
 #: bot/handlers/sections/settings_handlers.py:375
 msgid "Имя должно содержать от 2 до 100 символов. Попробуйте снова:"
-msgstr "Имя должно содержать от 2 до 100 символов. Попробуйте снова:"
+msgstr "Исем 2 дән 100 символ булырга тиеш. Кабатлап карагыз:"
 
 #: bot/handlers/sections/settings_handlers.py:395
 #, python-brace-format
 msgid "✅ Имя успешно обновлено на: {name}"
-msgstr "✅ Имя успешно обновлено на: {name}"
+msgstr "Pate Минем исем уңышлы яңартылды: {Исем}"
 
 #: bot/handlers/sections/stubs.py:18
 msgid "Кнопка пока в разработке"
-msgstr "Кнопка пока в разработке"
+msgstr "Төймә әле дә үсеш астында"
 
 #: bot/keyboards/main_menu.py:9
 msgid "📢 Исламский помощник"
-msgstr "📢 Islamic Assistant"
+msgstr "📢 Ислам Ярдәмчесе"
 
 #: bot/keyboards/main_menu.py:11
 msgid "👤 МОЙ ПРОФИЛЬ / НАСТРОЙКИ"
-msgstr "👤 MY PROFILE / SETTINGS"
+msgstr "👤 минем профиль / көйләүләр"
 
 #: bot/keyboards/main_menu.py:12 bot/keyboards/reply/__init__.py:25
 msgid "Знания"
-msgstr "Knowledge"
+msgstr "Белем"
 
 #: bot/keyboards/main_menu.py:15 bot/keyboards/reply/__init__.py:21
 msgid "Обучение"
-msgstr "Education"
+msgstr "Мәгариф"
 
 #: bot/keyboards/main_menu.py:16 bot/keyboards/reply/__init__.py:17
 msgid "Расписание намазов"
-msgstr "Prayer schedule"
+msgstr "Дога графигы"
 
 #: bot/keyboards/main_menu.py:19 bot/keyboards/reply/__init__.py:18
 msgid "Халяль места"
-msgstr "Halal places"
+msgstr "Хәләл урыннары"
 
 #: bot/keyboards/main_menu.py:20 bot/keyboards/reply/__init__.py:22
 msgid "Календарь событий"
-msgstr "Events calendar"
+msgstr "Вакыйгалар календаре"
 
 #: bot/keyboards/inline/contacts.py:11 bot/keyboards/inline/contacts.py:22
 msgid "support button"
-msgstr "Support"
+msgstr "Ярдәм төймәсе"
 
 #: bot/keyboards/inline/contacts.py:23
 msgid "back button"
-msgstr "🔙 Back"
+msgstr "арткы төймә"
 
 #: bot/keyboards/inline/menu.py:9
 msgid "wallet button"
-msgstr "👛 Wallet"
+msgstr "Капчык төймәсе"
 
 #: bot/keyboards/inline/menu.py:10
 msgid "premium button"
-msgstr "🆙 Get PREMIUM"
+msgstr "премия төймәсе"
 
 #: bot/keyboards/inline/profile.py:15
 msgid "⚙️ Настройки"
-msgstr "⚙️ Settings"
+msgstr "⚙️цитинг"
 
 #: bot/keyboards/inline/profile.py:19
+#, fuzzy
 msgid "🔙 Назад в меню"
-msgstr "🔙 Back to Menu"
+msgstr "Менюга кире кайту"
 
 #: bot/keyboards/inline/profile.py:28
 msgid "ℹ️ О проекте и Поддержка"
-msgstr "ℹ️ About and Support"
+msgstr "The проект һәм ярдәм турында"
 
 #: bot/keyboards/inline/profile.py:40
 msgid "Мужской"
-msgstr "Male"
+msgstr "Ир-ат"
 
 #: bot/keyboards/inline/profile.py:41
 msgid "Женский"
-msgstr "Female"
+msgstr "Хатын-кыз"
 
 #: bot/keyboards/inline/profile.py:44
 msgid "Другой"
-msgstr "Other"
+msgstr "Бүтән"
 
 #: bot/keyboards/inline/profile.py:47 bot/keyboards/inline/profile.py:68
 msgid "Отмена"
-msgstr "Cancel"
+msgstr "Бетерү"
 
 #: bot/keyboards/inline/profile.py:57
 msgid "🇷🇺 Русский"
-msgstr "🇷🇺 Русский"
+msgstr "🇷🇺 русча"
 
 #: bot/keyboards/inline/profile.py:58
 msgid "🇬🇧 English"
-msgstr "🇬🇧 English"
+msgstr "🇬🇧🇬🇧глиш"
 
 #: bot/keyboards/inline/profile.py:61
 msgid "🇸🇦 العربية"
@@ -351,255 +349,111 @@ msgstr "🏴 Татарча"
 
 #: bot/keyboards/inline/profile.py:65
 msgid "🏴 Башҡортса"
-msgstr "🏴 Башҡортса"
+msgstr "🏴bashҡortsa"
 
 #: bot/keyboards/inline/settings.py:20
+#, fuzzy
 msgid "🔔 Уведомления"
-msgstr "🔔 Notifications"
+msgstr "Хәбәрләр: {статус}"
 
 #: bot/keyboards/inline/settings.py:26
 msgid "↩️ Назад в Профиль"
-msgstr "↩️ Back to Profile"
+msgstr "A Профильгә кире кайту"
 
 #: bot/keyboards/inline/settings.py:39
 #, fuzzy, python-brace-format
 msgid "✏️ Изменить Имя ({name})"
-msgstr "✏️ Change Name"
+msgstr "Җенесне үзгәртү"
 
 #: bot/keyboards/inline/settings.py:47
 #, fuzzy, python-brace-format
 msgid "Изменить Пол ({gender})"
-msgstr "Change Gender"
+msgstr "Җенесне үзгәртү"
 
 #: bot/keyboards/inline/settings.py:55
 #, fuzzy, python-brace-format
 msgid "Изменить Город ({city})"
-msgstr "Change City"
+msgstr "Шәһәрне үзгәртү"
 
 #: bot/keyboards/inline/settings.py:64
-#, python-brace-format
+#, fuzzy, python-brace-format
 msgid "🇷🇺 Язык: {lang}"
-msgstr "🇷🇺 Language: {lang}"
+msgstr "Тел: {lang}"
 
 #: bot/keyboards/inline/settings.py:73
 #, python-brace-format
 msgid "⏳ Часовой пояс: {tz}"
-msgstr "⏳ Timezone: {tz}"
+msgstr "⏳ Вакыт зонасы: {tz}"
 
 #: bot/keyboards/inline/settings.py:83
 #, python-brace-format
 msgid "🕒 Формат времени: {fmt}"
-msgstr "🕒 Time Format: {fmt}"
+msgstr "🕒 Вакыт форматы: {fmt}"
 
 #: bot/keyboards/inline/settings.py:94 bot/keyboards/inline/settings.py:139
 #: bot/keyboards/inline/settings.py:245
 msgid "↩️ Назад в Настройки"
-msgstr "↩️ Back to Settings"
+msgstr "↩️ Көйләүләренә кире кайту"
 
 #: bot/keyboards/inline/settings.py:107 bot/keyboards/inline/settings.py:117
 #: bot/keyboards/inline/settings.py:127
 msgid "Вкл"
-msgstr "On"
+msgstr "Өстендә"
 
 #: bot/keyboards/inline/settings.py:107 bot/keyboards/inline/settings.py:117
 #: bot/keyboards/inline/settings.py:127
 msgid "Выкл"
-msgstr "Off"
+msgstr "Сүндерелгән"
 
 #: bot/keyboards/inline/settings.py:108
 #, python-brace-format
 msgid "🔔 Общие: {status}"
-msgstr "🔔 General: {status}"
+msgstr "🔔 Гомуми: {статус}"
 
 #: bot/keyboards/inline/settings.py:118
 #, python-brace-format
 msgid "🕌 Намазы: {status}"
-msgstr "🕌 Prayers: {status}"
+msgstr "🕌 Намаз: {статус}"
 
 #: bot/keyboards/inline/settings.py:128
-#, python-brace-format
+#, fuzzy, python-brace-format
 msgid "📅 События: {status}"
-msgstr "📅 Events: {status}"
+msgstr "Хәбәрләр: {статус}"
 
 #: bot/keyboards/inline/settings.py:172
 msgid "✏️ Ввести вручную"
-msgstr "✏️ Enter manually"
+msgstr "Your Кул белән кертегез"
 
 #: bot/keyboards/inline/settings.py:178 bot/keyboards/inline/settings.py:206
 msgid "↩️ Назад"
-msgstr "↩️ Back"
+msgstr "↩️ Арткы"
 
 #: bot/keyboards/inline/settings.py:221
 msgid "💰 Помощь проекту"
-msgstr "💰 Support the project"
+msgstr "The Проектка булыш"
 
 #: bot/keyboards/inline/settings.py:229
 msgid "🆘 Поддержка"
-msgstr "🆘 Support"
+msgstr "🆘 ярдәм"
 
 #: bot/keyboards/inline/settings.py:237
 msgid "📖 О проекте"
-msgstr "📖 About the project"
+msgstr "The Проект турында"
 
 #: bot/keyboards/reply/__init__.py:13
 msgid "Исламский помошник"
-msgstr "Islamic assistant"
+msgstr "Ислам Ярдәмчесе"
 
 #: bot/keyboards/reply/__init__.py:14
 msgid "👤 Мой профиль"
-msgstr "👤 My Profile"
+msgstr "👤 минем профиль"
 
 #: bot/keyboards/reply/__init__.py:32
 msgid "Выберите действие"
-msgstr "Choose an action"
-
-#~ msgid "info button"
-#~ msgstr "Info"
-
-#~ msgid "first message"
-#~ msgstr ""
-#~ "👋 <b>Welcome to the bot.</b>\n"
-#~ "\n"
-#~ "To start using the bot you can start with /menu"
+msgstr "Акцияне сайлагыз"
 
 #~ msgid "title main keyboard"
-#~ msgstr "📒 <b>Menu</b>."
+#~ msgstr "Төп клавиатура"
 
 #~ msgid "Пользователь не найден. Используйте /start."
-#~ msgstr "User not found. Use /start."
-
-#~ msgid "Язык: {lang}"
-#~ msgstr "Language: {lang}"
-
-#~ msgid "Назад в меню"
-#~ msgstr "Back to Menu"
-
-# New strings for prayer schedule module
-msgid "❌ Не удалось получить расписание намазов.\nПроверьте настройки города."
-msgstr "❌ Could not get prayer schedule.\nCheck city settings."
-
-msgid "📍 {city}, сегодня {date}\n🕌 Мазхаб: {madhab}\n\n"
-msgstr "📍 {city}, today {date}\n🕌 Madhab: {madhab}\n\n"
-
-msgid "🌅 Фаджр"
-msgstr "🌅 Fajr"
-
-msgid "☀️ Зухр"
-msgstr "☀️ Dhuhr"
-
-msgid "🌇 Аср"
-msgstr "🌇 Asr"
-
-msgid "🌆 Магриб"
-msgstr "🌆 Maghrib"
-
-msgid "🌃 Иша"
-msgstr "🌃 Isha"
-
-msgid "Произошла ошибка"
-msgstr "An error occurred"
-
-msgid "📆 НЕДЕЛЯ"
-msgstr "📆 WEEK"
-
-msgid "⚙️ НАСТРОЙКИ"
-msgstr "⚙️ SETTINGS"
-
-msgid "⬅️ Назад"
-msgstr "⬅️ Back"
-
-msgid "➡️ След. неделя"
-msgstr "➡️ Next week"
-
-msgid "🔙 В меню"
-msgstr "🔙 To menu"
-
-msgid "❌ Не удалось получить расписание на неделю."
-msgstr "❌ Could not get schedule for the week."
-
-msgid "📅 Расписание намазов на неделю\n"
-msgstr "📅 Prayer schedule for the week\n"
-
-msgid "📍 Город: {city}\n"
-msgstr "📍 City: {city}\n"
-
-msgid "🕌 Мазхаб: {madhab}\n\n"
-msgstr "🕌 Madhab: {madhab}\n\n"
-
-msgid "⚙️ Настройки намазов"
-msgstr "⚙️ Prayer settings"
-
-msgid "Не указан"
-msgstr "Not specified"
-
-msgid "📍 Город: {city}"
-msgstr "📍 City: {city}"
-
-msgid "🕌 Мазхаб: {madhab}"
-msgstr "🕌 Madhab: {madhab}"
-
-msgid "────────────"
-msgstr "────────────"
-
-msgid "Фаджр"
-msgstr "Fajr"
-
-msgid "Зухр"
-msgstr "Dhuhr"
-
-msgid "Аср"
-msgstr "Asr"
-
-msgid "Магриб"
-msgstr "Maghrib"
-
-msgid "Иша"
-msgstr "Isha"
-
-msgid "🔙 Назад"
-msgstr "🔙 Back"
-
-msgid "Ханафитский"
-msgstr "Hanafi"
-
-msgid "Шафиитский"
-msgstr "Shafi"
-
-msgid "Маликитский"
-msgstr "Maliki"
-
-msgid "Ханбалитский"
-msgstr "Hanbali"
-
-msgid "✅ Подтвердить"
-msgstr "✅ Confirm"
-
-msgid "❌ Отмена"
-msgstr "❌ Cancel"
-
-msgid "📍 Введите название города:\n\nПример: <i>Москва, Ташкент, Казань</i>\nИли на английском: <i>Moscow, Tashkent, Kazan</i>"
-msgstr "📍 Enter city name:\n\nExample: <i>Moscow, Tashkent, Kazan</i>\nOr in English: <i>Moscow, Tashkent, Kazan</i>"
-
-msgid "❌ Название города слишком короткое."
-msgstr "❌ City name is too short."
-
-msgid "❌ Не удалось найти город '{city}'.\nПроверьте правильность написания и попробуйте снова."
-msgstr "❌ Could not find city '{city}'.\nCheck spelling and try again."
-
-msgid "✅ Город '{city}' успешно сохранен!"
-msgstr "✅ City '{city}' saved successfully!"
-
-msgid "❌ Произошла ошибка при сохранении города."
-msgstr "❌ An error occurred while saving the city."
-
-msgid "Уведомления для {prayer} {status}"
-msgstr "Notifications for {prayer} {status}"
-
-msgid "включены"
-msgstr "enabled"
-
-msgid "выключены"
-msgstr "disabled"
-
-msgid "✅ Мазхаб изменен на {madhab}"
-msgstr "✅ Madhab changed to {madhab}"
+#~ msgstr "Кулланучы табылмады. Куллану / башлау."

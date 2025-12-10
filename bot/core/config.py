@@ -14,6 +14,16 @@ BOT_DIR = Path(__file__).absolute().parent.parent
 LOCALES_DIR = f"{BOT_DIR}/locales"
 I18N_DOMAIN = "messages"
 DEFAULT_LOCALE = "en"
+SUPPORTED_LOCALES = ["ru", "en", "ar", "tt", "ba"]
+
+# Список городов Башкирии для выбора в настройках намазов
+BASHKIRIA_CITIES = [
+    "Агидель", "Баймак", "Белебей", "Белорецк", "Бирск", 
+    "Благовещенск", "Давлеканово", "Дюртюли", "Ишимбай", 
+    "Кумертау", "Межгорье", "Мелеуз", "Нефтекамск", 
+    "Октябрьский", "Салават", "Сибай", "Стерлитамак", 
+    "Туймазы", "Уфа", "Учалы", "Янаул"
+]
 
 
 class EnvBaseSettings(BaseSettings):

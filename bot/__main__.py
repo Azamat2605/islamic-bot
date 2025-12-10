@@ -6,7 +6,7 @@ from loguru import logger
 from sentry_sdk.integrations.loguru import LoggingLevels, LoguruIntegration
 
 from bot.core.config import settings
-from bot.core.loader import app, bot, dp
+from bot.core.loader import app, bot, dp, setup_scheduler, start_scheduler, stop_scheduler
 from bot.handlers import get_handlers_router
 from bot.handlers.metrics import MetricsView
 from bot.keyboards.default_commands import remove_default_commands, set_default_commands
@@ -45,6 +45,15 @@ async def on_startup() -> None:
         logger.error(f"Database initialization failed: {e}")
         logger.warning("Bot will continue without database")
 
+    # Настройка и запуск планировщика уведомлений о намазах
+    try:
+        setup_scheduler()
+        start_scheduler()
+        logger.info("Планировщик уведомлений запущен")
+    except Exception as e:
+        logger.error(f"Ошибка запуска планировщика: {e}")
+        logger.warning("Бот будет работать без уведомлений о намазах")
+
     await set_default_commands(bot)
 
     bot_info = await bot.get_me()
@@ -76,6 +85,13 @@ async def on_shutdown() -> None:
 
     await bot.delete_webhook()
     await bot.session.close()
+
+    # Остановка планировщика уведомлений
+    try:
+        stop_scheduler()
+        logger.info("Планировщик уведомлений остановлен")
+    except Exception as e:
+        logger.error(f"Ошибка остановки планировщика: {e}")
 
     # Закрытие пула соединений базы данных
     await engine.dispose()

@@ -273,7 +273,7 @@ settings_account → account_export_data, account_delete, back_to_settings
 
 ### 6.2 Действия
 ```
-general_language → lang_ru, lang_en, lang_uk, back_to_general
+general_language → lang_ru, lang_en, lang_ar, lang_tt, lang_ba, back_to_general
 general_timezone → timezone_enter (FSM), timezone_list, back_to_general
 general_date_format → date_format_ddmmyyyy, date_format_mmddyyyy, back_to_general
 general_time_format → time_format_24h, time_format_12h, back_to_general
