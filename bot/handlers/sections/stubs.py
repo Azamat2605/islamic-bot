@@ -4,10 +4,7 @@ from aiogram.utils.i18n import gettext as _, lazy_gettext as __
 router = Router(name="stubs")
 
 
-@router.message(F.text == __("Исламский помошник"))
-@router.message(F.text == __("Халяль места"))
 @router.message(F.text == __("Обучение"))
-@router.message(F.text == __("Знания"))
 async def section_stub_handler(message: types.Message) -> None:
     """
     Универсальный обработчик для кнопок, которые пока в разработке.

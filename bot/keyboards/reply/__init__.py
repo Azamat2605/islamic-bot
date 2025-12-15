@@ -10,7 +10,7 @@ def get_main_menu() -> ReplyKeyboardMarkup:
     """
     buttons = [
         [
-            KeyboardButton(text=_("Исламский помошник")),
+            KeyboardButton(text=_("🤖 Исламский помощник")),
             KeyboardButton(text=_("👤 Мой профиль")),
         ],
         [

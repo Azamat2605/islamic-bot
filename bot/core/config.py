@@ -97,6 +97,11 @@ class Settings(BotSettings, DBSettings, CacheSettings):
     
     ADMINS: list[int] = []
 
+    # DeepSeek AI API configuration
+    DEEPSEEK_API_KEY: str
+    DEEPSEEK_BASE_URL: str = "https://api.deepseek.com"
+    DEEPSEEK_MODEL: str = "deepseek-chat"
+
     @field_validator("ADMINS", mode="before")
     @classmethod
     def parse_admins(cls, v: str | list[int]) -> list[int]:

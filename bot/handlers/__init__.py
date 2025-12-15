@@ -12,6 +12,8 @@ from .sections import (
     events_calendar_router,
     stubs_router,
     settings_router,
+    test_taking_router,
+    ai_assistant_router,
 )
 
 
@@ -35,5 +37,7 @@ def get_handlers_router() -> Router:
     router.include_router(events_calendar_router)
     router.include_router(stubs_router)
     router.include_router(settings_router)
+    router.include_router(test_taking_router)
+    router.include_router(ai_assistant_router)
 
     return router

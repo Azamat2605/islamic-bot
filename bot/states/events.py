@@ -4,6 +4,11 @@
 from aiogram.fsm.state import State, StatesGroup
 
 
+class EventStates(StatesGroup):
+    """Состояния FSM для модуля мероприятий."""
+    pass
+
+
 class EventProposalState(StatesGroup):
     """Состояния для предложения мероприятия."""
     waiting_for_title = State()
@@ -12,7 +17,7 @@ class EventProposalState(StatesGroup):
 
 
 class EventRegistrationState(StatesGroup):
-    """Состояния для регистрации на мероприятие."""
+    """Состояния для регистрации на мероприятия."""
     waiting_for_confirmation = State()
 
 

@@ -7,7 +7,7 @@ from sqlalchemy import select
 
 from bot.states.profile import ProfileStates
 from database.models import User, Settings
-from database.crud import get_user_with_settings, ensure_user
+from database.crud import get_user_with_settings, get_or_create_user_with_settings
 from bot.keyboards.inline.profile import profile_keyboard, gender_keyboard, language_keyboard
 from bot.core.loader import i18n
 
@@ -51,10 +51,8 @@ async def profile_command_handler(message: types.Message, session: AsyncSession)
     full_name = message.from_user.full_name
 
     # Гарантируем, что пользователь и настройки существуют (создаём или обновляем)
-    user = await ensure_user(session, telegram_id, username, full_name)
-    # После ensure_user получаем актуальные данные с настройки
-    user, settings = await get_user_with_settings(session, telegram_id)
-    # Настройки должны существовать благодаря ensure_user, но на всякий случай проверяем
+    user, settings = await get_or_create_user_with_settings(session, telegram_id, full_name, username)
+    # Настройки должны существовать благодаря get_or_create_user_with_settings, но на всякий случай проверяем
     if not settings:
         # Если настройки всё же отсутствуют (крайний случай), создаём их
         settings = Settings(user_id=user.id, language="ru", notification_on=True)

@@ -5,7 +5,7 @@ from sqlalchemy.ext.asyncio import AsyncSession
 
 from bot.keyboards.reply import get_main_menu
 from bot.services.analytics import analytics
-from database.crud import ensure_user
+from database.crud import get_or_create_user_with_settings
 
 router = Router(name="start")
 
@@ -15,11 +15,11 @@ async def start_handler(message: types.Message, session: AsyncSession) -> None:
     """Welcome message."""
     from_user = message.from_user
     # Сохраняем/обновляем пользователя в базе
-    await ensure_user(
+    user, settings = await get_or_create_user_with_settings(
         session=session,
         telegram_id=from_user.id,
-        username=from_user.username,
         full_name=from_user.full_name,
+        username=from_user.username,
     )
 
     welcome_text = _("Здравствуйте! Это ваш бот-помощник. Воспользуйтесь меню ниже для навигации:")

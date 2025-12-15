@@ -393,5 +393,5 @@ async def process_name(
     # Показываем обновленные настройки
     await message.answer(
         _("✅ Имя успешно обновлено на: {name}").format(name=new_name),
-        reply_markup=settings_general_keyboard(user, settings),
+        reply_markup=profile_keyboard(user, settings),
     )
