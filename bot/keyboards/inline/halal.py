@@ -24,8 +24,8 @@ def get_halal_main_keyboard(counts: Dict[str, int]) -> InlineKeyboardMarkup:
     )
     
     builder.button(
-        text="🔙 Назад",
-        callback_data=HalalCallback(action=HalalAction.BACK, from_state="main")
+        text="🏠 В главное меню",
+        callback_data="main_menu"
     )
     
     builder.adjust(1)  # По одному в ряд

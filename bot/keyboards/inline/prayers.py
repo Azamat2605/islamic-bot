@@ -25,6 +25,14 @@ def get_prayer_main_kb() -> InlineKeyboardMarkup:
         )
     )
     
+    # Кнопка возврата в главное меню бота
+    builder.row(
+        InlineKeyboardButton(
+            text=_("🏠 В главное меню"),
+            callback_data="main_menu"
+        )
+    )
+    
     return builder.as_markup()
 
 

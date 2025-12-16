@@ -1,6 +1,6 @@
 from aiogram import Router
 
-from . import export_users, info, start, support, main_menu
+from . import export_users, info, start, support, main_menu, common_nav
 from .admins import admin_panel, test_prayer
 from .sections import (
     islamic_router,
@@ -23,6 +23,7 @@ def get_handlers_router() -> Router:
     router.include_router(info.router)
     router.include_router(support.router)
     router.include_router(main_menu.router)
+    router.include_router(common_nav.router)  # Высокий приоритет для навигации
     router.include_router(export_users.router)
     router.include_router(admin_panel)
     router.include_router(test_prayer)

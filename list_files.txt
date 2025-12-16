@@ -225,6 +225,9 @@
 [.\docs\specifications\education_module_summary.md]  Текстовый файл
 [.\docs\specifications\halal_module_spec.md]  Текстовый файл
 [.\docs\specifications\ai_assistant_spec.md]  Текстовый файл
+[.\docs\specifications\inline_migration_spec.md]  Текстовый файл
+[.\docs\specifications\phase2_fix_spec.md]  Текстовый файл
+[.\docs\specifications\ai_fix_plan.md]  Текстовый файл
 [.\docs\specs\002_events_calendar_spec.md]  Текстовый файл
 [.\docs\specs\quran_module_spec.md]  Текстовый файл
 [.\logs\telegram_bot.2025-12-07_18-10-25_923947.log.zip]  Архив

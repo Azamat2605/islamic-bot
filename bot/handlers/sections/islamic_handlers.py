@@ -3,11 +3,5 @@ from aiogram.utils.i18n import gettext as _
 
 router = Router(name="islamic")
 
-
-@router.callback_query(F.data == "islamic_assistant")
-async def islamic_assistant_handler(callback: types.CallbackQuery) -> None:
-    """Обработчик раздела 'Исламский помощник'."""
-    await callback.answer(
-        "Раздел '📢 Исламский помощник' находится в разработке.",
-        show_alert=True,
-    )
+# Обработчик islamic_assistant удален, чтобы разрешить работу нового обработчика в ai_assistant.py
+# Новый обработчик находится в bot/handlers/sections/ai_assistant.py

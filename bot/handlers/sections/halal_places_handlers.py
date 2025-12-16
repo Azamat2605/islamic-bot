@@ -79,9 +79,8 @@ async def nearest_places_handler(
         "Нажмите кнопку ниже, чтобы отправить ваше местоположение:"
     )
     
-    await callback.message.edit_text(text)
-    await callback.message.answer(
-        _("Пожалуйста, отправьте ваше местоположение:"),
+    await callback.message.edit_text(
+        text,
         reply_markup=get_location_request_keyboard()
     )
     
@@ -102,6 +101,13 @@ async def location_received_handler(
     location = message.location
     latitude = location.latitude
     longitude = location.longitude
+    
+    # Удаляем Reply Keyboard
+    remove_msg = await message.answer(
+        "⌛",
+        reply_markup=types.ReplyKeyboardRemove()
+    )
+    await remove_msg.delete()
     
     # Получаем ближайшие места
     nearby_places = await HalalService.get_nearby_places(
@@ -334,20 +340,12 @@ async def back_handler(
     session: AsyncSession
 ) -> None:
     """
-    Обработка кнопки "Назад".
+    Обработка кнопки "Назад" для внутренней навигации в модуле Halal.
+    Возврат в главное меню бота обрабатывается глобальным обработчиком common_nav (main_menu).
     """
     from_state = callback_data.from_state
     
-    if from_state == "main":
-        # Возврат из меню Халяль в ГЛАВНОЕ МЕНЮ БОТА
-        # Удаляем текущее сообщение и отправляем главное меню
-        await callback.message.delete()
-        await callback.message.answer(
-            _("🏠 ГЛАВНОЕ МЕНЮ"),
-            reply_markup=get_main_menu()
-        )
-    
-    elif from_state == "categories":
+    if from_state == "categories":
         # Возврат к выбору категории
         await callback.message.edit_text(
             _("🔍 ПОИСК ПО КАТЕГОРИЯМ\n\nВыберите категорию:"),
@@ -375,6 +373,13 @@ async def back_from_location_handler(
     Обработка кнопки "Назад" в состоянии ожидания геолокации.
     """
     await state.clear()
+    
+    # Удаляем Reply Keyboard
+    remove_msg = await message.answer(
+        "⌛",
+        reply_markup=types.ReplyKeyboardRemove()
+    )
+    await remove_msg.delete()
     
     # Возвращаемся к главному меню
     counts = await HalalService.get_counts_by_category(session)

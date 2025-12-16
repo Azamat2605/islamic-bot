@@ -3,7 +3,7 @@ from aiogram.filters import CommandStart
 from aiogram.utils.i18n import gettext as _
 from sqlalchemy.ext.asyncio import AsyncSession
 
-from bot.keyboards.reply import get_main_menu
+from bot.keyboards.main_menu import main_menu_keyboard
 from bot.services.analytics import analytics
 from database.crud import get_or_create_user_with_settings
 
@@ -22,5 +22,12 @@ async def start_handler(message: types.Message, session: AsyncSession) -> None:
         username=from_user.username,
     )
 
+    # Удаляем старую Reply Keyboard (Ghost Keyboard fix)
+    remove_msg = await message.answer(
+        "⌛",
+        reply_markup=types.ReplyKeyboardRemove()
+    )
+    await remove_msg.delete()
+
     welcome_text = _("Здравствуйте! Это ваш бот-помощник. Воспользуйтесь меню ниже для навигации:")
-    await message.answer(welcome_text, reply_markup=get_main_menu())
+    await message.answer(welcome_text, reply_markup=main_menu_keyboard())

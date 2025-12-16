@@ -240,11 +240,27 @@ async def process_city(message: types.Message, state: FSMContext, session: Async
     await message.answer(_("Город обновлён."))
 
 
-# Старый обработчик для обратной совместимости
 @router.callback_query(F.data == "profile_settings")
-async def profile_settings_handler(callback: types.CallbackQuery) -> None:
+async def profile_settings_handler(callback: types.CallbackQuery, session: AsyncSession) -> None:
     """Обработчик раздела 'Мой профиль / настройки'."""
-    await callback.answer(
-        "Раздел '👤 МОЙ ПРОФИЛЬ / НАСТРОЙКИ' теперь доступен через команду /profile.",
-        show_alert=True,
+    telegram_id = callback.from_user.id
+    username = callback.from_user.username
+    full_name = callback.from_user.full_name
+
+    # Гарантируем, что пользователь и настройки существуют
+    user, settings = await get_or_create_user_with_settings(session, telegram_id, full_name, username)
+    if not settings:
+        settings = Settings(user_id=user.id, language="ru", notification_on=True)
+        session.add(settings)
+        await session.commit()
+
+    # Формируем текст профиля
+    profile_text = get_profile_text(user, settings)
+
+    # Редактируем сообщение с inline-клавиатурой профиля
+    await callback.message.edit_text(
+        profile_text,
+        reply_markup=profile_keyboard(user, settings),
+        parse_mode="Markdown",
     )
+    await callback.answer()

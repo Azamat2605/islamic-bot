@@ -11,6 +11,9 @@ def get_ai_menu_kb() -> InlineKeyboardMarkup:
     builder.row(
         InlineKeyboardButton(text="🎨 Создание изображений", callback_data="ai_image_mode")
     )
+    builder.row(
+        InlineKeyboardButton(text="🏠 В главное меню", callback_data="main_menu")
+    )
     return builder.as_markup()
 
 
@@ -32,4 +35,14 @@ def get_ai_chat_actions_kb(result_id: str = "") -> InlineKeyboardMarkup:
         callback_data="ai_share_stub"  # временная заглушка
     )
     builder.row(share_button)
+    return builder.as_markup()
+
+
+def get_ai_image_mode_kb() -> InlineKeyboardMarkup:
+    """Клавиатура для режима генерации изображений."""
+    builder = InlineKeyboardBuilder()
+    builder.row(
+        InlineKeyboardButton(text="⬅️ Назад", callback_data="ai_assistant_back"),
+        InlineKeyboardButton(text="🏠 В главное меню", callback_data="main_menu")
+    )
     return builder.as_markup()
