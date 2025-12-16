@@ -1,8 +1,13 @@
 from __future__ import annotations
 
-from sqlalchemy.orm import Mapped, mapped_column
+from typing import TYPE_CHECKING
+
+from sqlalchemy.orm import Mapped, mapped_column, relationship
 
 from bot.database.models.base import Base, big_int_pk, created_at
+
+if TYPE_CHECKING:
+    from bot.database.models.settings import Settings
 
 
 class UserModel(Base):
@@ -20,3 +25,6 @@ class UserModel(Base):
     is_suspicious: Mapped[bool] = mapped_column(default=False)
     is_block: Mapped[bool] = mapped_column(default=False)
     is_premium: Mapped[bool] = mapped_column(default=False)
+
+    # Relationship
+    settings: Mapped["Settings"] = relationship("Settings", back_populates="user", uselist=False)

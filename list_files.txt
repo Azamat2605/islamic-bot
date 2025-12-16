@@ -103,6 +103,7 @@
 [.\bot\database\__init__.py]  Python модуль работы с БД
 [.\bot\database\models\base.py]  Python модуль работы с БД
 [.\bot\database\models\user.py]  Python модуль работы с БД
+[.\bot\database\models\settings.py]  Python модуль работы с БД
 [.\bot\database\models\__init__.py]  Python модуль работы с БД
 [.\bot\filters\admin.py]  Python модуль
 [.\bot\filters\number.py]  Python модуль
