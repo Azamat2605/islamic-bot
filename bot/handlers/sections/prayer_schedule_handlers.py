@@ -4,6 +4,7 @@ from datetime import date, datetime, timedelta
 from typing import Any, Dict, Optional
 
 from aiogram import F, Router
+from bot.handlers.common.show_main_menu import show_main_menu
 from aiogram.filters import Command
 from aiogram.types import CallbackQuery, Message
 from aiogram.utils.i18n import gettext as _, lazy_gettext as __
@@ -130,7 +131,15 @@ async def handle_prayer_main(callback: CallbackQuery, session: AsyncSession) -> 
         timings_data = await PrayerService.get_today_timings(city, madhab)
         
         if not timings_data:
-            await callback.message.edit_text(
+            # Удаляем предыдущее сообщение (фото-меню) и отправляем новое текстовое сообщение
+            # Это предотвращает TelegramBadRequest при попытке edit_text фото в текст
+            try:
+                await callback.message.delete()
+            except Exception as e:
+                logger.warning(f"Could not delete previous message: {e}")
+            
+            # Отправляем новое сообщение
+            await callback.message.answer(
                 _("❌ Не удалось получить расписание намазов.\nПроверьте настройки города."),
                 reply_markup=get_prayer_main_kb()
             )
@@ -181,8 +190,16 @@ async def handle_prayer_main(callback: CallbackQuery, session: AsyncSession) -> 
         message_text += "\n".join(prayer_lines)
 
         # Отправляем/редактируем сообщение
-        if callback.message.text:
-            await callback.message.edit_text(
+        if callback.message.photo:
+            # Удаляем предыдущее сообщение (фото-меню) и отправляем новое текстовое сообщение
+            # Это предотвращает TelegramBadRequest при попытке edit_text фото в текст
+            try:
+                await callback.message.delete()
+            except Exception as e:
+                logger.warning(f"Could not delete previous message: {e}")
+            
+            # Отправляем новое сообщение
+            await callback.message.answer(
                 message_text,
                 reply_markup=get_prayer_main_kb()
             )

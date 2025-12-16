@@ -1,7 +1,9 @@
 from aiogram import Router, types, F
+from bot.handlers.common.show_main_menu import show_main_menu
 from aiogram.fsm.context import FSMContext
 from aiogram.utils.i18n import gettext as _, lazy_gettext as __
 from sqlalchemy.ext.asyncio import AsyncSession
+import logging
 
 from bot.services.halal_service import HalalService
 from bot.states.halal import HalalStates
@@ -16,6 +18,7 @@ from bot.keyboards.reply import get_main_menu
 from bot.callbacks.halal import HalalCallback, HalalAction
 
 router = Router(name="halal_places")
+logger = logging.getLogger(__name__)
 
 
 # Главный обработчик раздела Halal Places
@@ -52,7 +55,14 @@ async def halal_places_main_handler(
     )
     
     if isinstance(event, types.CallbackQuery):
-        await event.message.edit_text(
+        # Удаляем предыдущее сообщение (фото-меню) и отправляем новое текстовое сообщение
+        try:
+            await event.message.delete()
+        except Exception as e:
+            logger.warning(f"Could not delete previous message: {e}")
+        
+        # Отправляем новое сообщение
+        await event.message.answer(
             text,
             reply_markup=get_halal_main_keyboard(counts)
         )
@@ -79,7 +89,15 @@ async def nearest_places_handler(
         "Нажмите кнопку ниже, чтобы отправить ваше местоположение:"
     )
     
-    await callback.message.edit_text(
+        # Удаляем предыдущее сообщение (фото-меню) и отправляем новое текстовое сообщение
+    # Это предотвращает TelegramBadRequest при попытке edit_text фото в текст
+    try:
+        await callback.message.delete()
+    except Exception as e:
+        logger.warning(f"Could not delete previous message: {e}")
+    
+    # Отправляем новое сообщение
+    await callback.message.answer(
         text,
         reply_markup=get_location_request_keyboard()
     )

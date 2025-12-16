@@ -1,4 +1,5 @@
 from aiogram import Router, F
+from bot.handlers.common.show_main_menu import show_main_menu
 from aiogram.filters import Command
 from aiogram.fsm.context import FSMContext
 from aiogram.types import Message, CallbackQuery, InputFile, InputMediaPhoto, InlineKeyboardMarkup
@@ -118,7 +119,15 @@ async def on_ai_assistant_entry(callback: CallbackQuery, state: FSMContext):
         "Задавайте вопросы о Коране, Сунне, фикхе, истории ислама и духовности. "
         "Я постараюсь ответить на основе авторитетных источников."
     )
-    await callback.message.edit_text(
+        # Удаляем предыдущее сообщение (фото-меню) и отправляем новое текстовое сообщение
+    # Это предотвращает TelegramBadRequest при попытке edit_text фото в текст
+    try:
+        await callback.message.delete()
+    except Exception as e:
+        logger.warning(f"Could not delete previous message: {{e}}")
+    
+    # Отправляем новое сообщение
+    await callback.message.answer(
         text=text,
         parse_mode=ParseMode.MARKDOWN,
         reply_markup=get_ai_menu_kb()

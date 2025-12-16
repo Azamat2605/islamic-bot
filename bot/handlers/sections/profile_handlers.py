@@ -257,8 +257,15 @@ async def profile_settings_handler(callback: types.CallbackQuery, session: Async
     # Формируем текст профиля
     profile_text = get_profile_text(user, settings)
 
-    # Редактируем сообщение с inline-клавиатурой профиля
-    await callback.message.edit_text(
+    # Удаляем предыдущее сообщение (фото-меню) и отправляем новое текстовое сообщение профиля
+    # Это предотвращает TelegramBadRequest при попытке edit_text фото в текст
+    try:
+        await callback.message.delete()
+    except Exception as e:
+        logger.warning(f"Could not delete previous message: {e}")
+    
+    # Отправляем новое сообщение с профилем
+    await callback.message.answer(
         profile_text,
         reply_markup=profile_keyboard(user, settings),
         parse_mode="Markdown",

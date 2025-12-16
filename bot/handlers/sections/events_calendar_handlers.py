@@ -3,6 +3,7 @@
 """
 import datetime
 from aiogram import Router, types, F
+from bot.handlers.common.show_main_menu import show_main_menu
 from aiogram.fsm.context import FSMContext
 from aiogram.utils.i18n import gettext as _, lazy_gettext as __
 from sqlalchemy.ext.asyncio import AsyncSession
@@ -48,7 +49,15 @@ async def events_calendar_main_handler(callback: types.CallbackQuery) -> None:
         "Выберите раздел:"
     )
     
-    await callback.message.edit_text(
+        # Удаляем предыдущее сообщение (фото-меню) и отправляем новое текстовое сообщение
+    # Это предотвращает TelegramBadRequest при попытке edit_text фото в текст
+    try:
+        await callback.message.delete()
+    except Exception as e:
+        logger.warning(f"Could not delete previous message: {{e}}")
+    
+    # Отправляем новое сообщение
+    await callback.message.answer(
         text,
         reply_markup=get_events_main_keyboard(),
         parse_mode="Markdown"

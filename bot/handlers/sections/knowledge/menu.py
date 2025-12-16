@@ -87,6 +87,13 @@ async def knowledge_callback_entry(callback: types.CallbackQuery) -> None:
     """
     logger.info(f"User {callback.from_user.id} entered Knowledge section via main menu callback")
     
+    # Удаляем предыдущее сообщение (фото-меню) и отправляем новое текстовое сообщение
+    # Это предотвращает TelegramBadRequest при попытке edit_text фото в текст
+    try:
+        await callback.message.delete()
+    except Exception as e:
+        logger.warning(f"Could not delete previous message: {e}")
+    
     # Welcome text for Knowledge section
     text = _(
         "📖 ЗНАНИЯ (ILM)\n\n"
@@ -101,11 +108,11 @@ async def knowledge_callback_entry(callback: types.CallbackQuery) -> None:
         "Выберите интересующий вас раздел:"
     )
     
-    with suppress(TelegramBadRequest):
-        await callback.message.edit_text(
-            text,
-            reply_markup=get_knowledge_main_keyboard()
-        )
+    # Отправляем новое сообщение с клавиатурой знаний
+    await callback.message.answer(
+        text,
+        reply_markup=get_knowledge_main_keyboard()
+    )
     await callback.answer()
 
 
@@ -166,19 +173,7 @@ async def main_menu_handler(callback: types.CallbackQuery) -> None:
     """
     logger.info(f"User {callback.from_user.id} clicked Main Menu from Knowledge")
     
-    from bot.keyboards.reply import get_main_menu
-    
-    text = _("Главное меню")
-    
-    # Send a new message with the Reply Keyboard instead of editing
-    # This ensures the Reply Keyboard appears properly
-    await callback.message.answer(
-        text,
-        reply_markup=get_main_menu()
-    )
-    
-    # Optionally delete the previous inline message for cleaner UI
-    with suppress(TelegramBadRequest):
-        await callback.message.delete()
-    
-    await callback.answer()
+    # Используем универсальную функцию show_main_menu для возврата в главное меню
+    # Она сама удалит предыдущее сообщение и отправит фото-меню
+    from bot.handlers.common.show_main_menu import show_main_menu
+    await show_main_menu(callback, delete_previous=True)
